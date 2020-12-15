@@ -1,6 +1,6 @@
 // email autorizzate
 var emails = ["dado@dadolandia.com", "altrodado@dadolandia.com"];
-var checkEmail;
+var checkEmail = false;
 
 // prompt per email utente
 var userEmail = prompt("Inserire la propria email (dado@dadolandia.com): ");
@@ -11,7 +11,6 @@ for (var m = 0; m < emails.length; m++) {
         checkEmail = true; 
         alert("Ok, preparati a giocare!");
     }
-    alert("Email non autorizzata. Fare il refresh della pagina ed inserire nuovamente l'email.");
 }
 
 // in caso di email autorizzata
