@@ -12,9 +12,28 @@
     </header>
 
     <main>
-        <h2>Clicca il pulsante seguente per fare il login e giocare</h2>
-        <button class="play">Log in</button>
-        <div id="result"></div>
+        <!-- Div contenente le parti visibili all'inizio: istruzioni-titolo e pulsante log in -->
+        <div class="inner-container">
+            <h2>Clicca il pulsante seguente per fare il login e giocare</h2>
+            <button class="play">Log in</button>
+        </div>
+        
+        <!-- Risultato: appare solo alla fine del gioco -->
+        <div class="results-container hidden">
+            <h3>Risultato</h3>
+            <!-- sezione risultato utente -->
+            <div class="user-dice ">
+                <h4>Tu</h4>
+                <div id="user-dice-result" class="dice-result"></div>
+            </div>
+            <!-- sezione risultato computer -->
+            <div class="computer-dice winner-animation">
+                <h4>AI</h4>
+                <div id="computer-dice-result" class="dice-result"></div>
+            </div>
+            <!-- esito con dichiarazione del vincitore -->
+            <div id="result"></div>
+        </div>
     </main>
     
     <script src="./script.js"></script>

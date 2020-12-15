@@ -1,5 +1,5 @@
 // email autorizzate e variabili
-var emails = ["dado@dadolandia.com", "altrodado@dadolandia.com"];
+var emails = ["dado", "altrodado@dadolandia.com"];
 var checkEmail = false;
 var result;
 
@@ -12,6 +12,9 @@ document.querySelector(".play").addEventListener("click", function() {
     for (var m = 0; m < emails.length; m++) {
         if(emails[m] === userEmail) {
             checkEmail = true; 
+
+// ? Come faccio a farlo eseguire prima di alert?
+            document.querySelector(".inner-container").classList.add("hidden");
             alert("Ok, preparati a giocare!");
         }
     }
@@ -37,7 +40,7 @@ document.querySelector(".play").addEventListener("click", function() {
 
         // gioco dadi inizia
         // var giocatore, var computer: random numero 1-6
-        
+
         var userDice = Math.floor(Math.random() * (7 - 1) + 1);
         var computerDice = Math.floor(Math.random() * (7 - 1) + 1);
 
@@ -50,8 +53,13 @@ document.querySelector(".play").addEventListener("click", function() {
             result = "Pari";
         }
 
-        document.querySelector("#result").innerText = result;
+        // il container dei risultati diventa visibile
+        document.querySelector(".results-container").classList.remove("hidden");
 
+        // visualizzazione risultati
+        document.querySelector("#computer-dice-result").innerText = computerDice;
+        document.querySelector("#user-dice-result").innerText = userDice;
+        document.querySelector("#result").innerText = result;
     }
 })
 

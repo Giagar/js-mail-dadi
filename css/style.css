@@ -1,3 +1,4 @@
+/* COMMON RULES & UTILITY CLASSES */
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -7,6 +8,14 @@ html {
     margin: 0; 
     padding: 0;
 }
+
+.hidden {
+    display: none;
+}
+/* 
+.winner-animation {
+
+} */
 
 
 /* STYLE */
@@ -22,11 +31,13 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 1.4px;
     font-size: 40px;
+    text-shadow: 6px 6px 4px rgba(40, 40, 40, 0.6);
 }
 
 main {
     margin-top: 50px;
     text-align: center;
+    padding: 0 5vw;
 }
 
 main h2 {
@@ -58,4 +69,36 @@ main button:active {
 main button:focus {
     outline: none;
     border: 2px solid lightblue;
+}
+
+main .results-container {
+}
+
+main .results-container h3 {
+    font-size: 28px;
+}
+
+main .results-container h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+main .results-container .user-dice, main .results-container .computer-dice {
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    margin-top: 30px;
+}
+
+main .results-container .dice-result {
+    padding: 20px 10px;
+    font-size: 19px; 
+}
+
+main .results-container #result {
+    font-size: 44px;
+    margin-top: 20px;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
