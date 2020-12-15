@@ -46,8 +46,10 @@ document.querySelector(".play").addEventListener("click", function() {
 
         // compara le due var, vince la maggiore
         if(computerDice > userDice) {
-            result = "Il computer ha vinto";
+            document.querySelector(".computer-dice").classList.add("winner-animation")
+            result = "Hai perso";
         } else if (userDice > computerDice) {
+            document.querySelector(".user-dice").classList.add("winner-animation")
             result = "Hai vinto";
         } else {
             result = "Pari";
