@@ -13,10 +13,116 @@ html {
     display: none;
 }
 
-.winner-animation {
+/* animazioni */
+.winner-animation:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
     border: 4px solid lightblue;
-    /* padding: 10px; */
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: winner-box;
+    animation-duration: 2.8s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
+
+@keyframes winner-box {
+    
+    0% {
+        border-color: lightblue;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    25% {
+        border-color: orange;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    
+    50% {
+        border-color: lightblue;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    95% {
+        border-color: orange;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    
+    100% {
+        border-color: lightblue;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+}
+
+
+.result-effect {
+    animation: text-effect 0.6s ease-out 1 forwards;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 
+// da salvare
+animation: winner-text 1s linear infinite both;
+@keyframes winner-text {
+
+    50% {
+        color: orange;
+        transform: translate(1px, -1px) scale(0.97);
+    }
+
+    100% {
+        color: initial;
+        transform: translate(0, 0) scale(1);
+    }
+
+} */
+/* 
+@keyframes text-effect {
+
+    50% {
+        transform: translate(1px, -1px) scale(0.98);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+}  */
+
+@keyframes text-effect {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(360deg);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(0.2) rotate(270deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.4) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(0.6) rotate(90deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+    }
+
+} 
 
 
 /* STYLE */
@@ -41,6 +147,7 @@ main {
     padding: 0 5vw;
 }
 
+/* parte visivile all'inizio */
 main h2 {
     font-weight: 500;
     text-align: center;
@@ -72,9 +179,7 @@ main button:focus {
     border: 2px solid lightblue;
 }
 
-main .results-container {
-}
-
+/* parte contenente i risultati */
 main .results-container h3 {
     font-size: 28px;
 }
@@ -89,7 +194,8 @@ main .results-container .user-dice, main .results-container .computer-dice {
     display: inline-block;
     text-align: center;
     width: 150px;
-    margin-top: 10px;
+    margin-top: 30px;
+    position: relative; /* riferimento per .winner-animation */
 }
 
 main .results-container .dice-result {
@@ -97,10 +203,15 @@ main .results-container .dice-result {
     font-size: 19px; 
 }
 
-main .results-container #result {
-    font-size: 44px;
+main .results-container .result-outer-container {
     margin-top: 20px;
     padding: 10px 10px;
+    height: 100px;
+    position: relative; /* riferimento per .result-effect */
+}
+
+main .results-container .result-outer-container #result {
+    font-size: 44px;
     text-transform: uppercase;
     text-decoration: underline;
 }

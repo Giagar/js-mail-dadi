@@ -1,5 +1,5 @@
 // email autorizzate e variabili
-var emails = ["dado", "altrodado@dadolandia.com"];
+var emails = ["dado@dadolandia.com", "altrodado@dadolandia.com"];
 var checkEmail = false;
 var result;
 
